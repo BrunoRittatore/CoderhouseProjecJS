@@ -23,14 +23,20 @@ if (cantidadNotas == 0) {
 
 
 function algoritmo (){
-    let n;
-    let capitalDepositado, capitalAcumulado,meses,tasaDeInteres;
-    capitalDepositado = parseInt(document.querySelector('#capital-depositado').value);
-    meses = parseInt(document.querySelector('#duracion-deposito').value);
-    tasaDeInteres = parseInt(document.querySelector('#tasa-de-interes').value);
-    capitalAcumulado = capitalDepositado * Math.pow(1.0+tasaDeInteres/100/365,meses*30)
-    console.log('Capital depositado ' + capitalDepositado + ' acumulado: '+ capitalAcumulado);
-    alert (' El valor acumulado del capital es de : '+capitalAcumulado);
+    const variables = {
+        TNA:null,
+        TM:null,
+        capitalAcumulado:null,
+        meses:null,
+        capitalDepositado:null,
+    }
+        
+    variables.capitalDepositado = parseInt(document.querySelector('#capital-depositado').value);
+    variables.meses = parseInt(document.querySelector('#duracion-deposito').value);
+    variables.TNA = parseInt(document.querySelector('#tasa-de-interes').value);
+    variables.capitalAcumulado = variables.capitalDepositado * ((1.0+variables.TNA/12/100)* variables.meses);
+    console.log('Capital depositado ' + variables.capitalDepositado + ' acumulado: '+ variables.capitalAcumulado);
+    alert (' El valor acumulado del capital es de : '+variables.capitalAcumulado);
  
 }
 

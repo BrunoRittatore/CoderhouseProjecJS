@@ -13,3 +13,24 @@
 .buttons {
     margin: 5rem 2rem;
 }
+ a{
+    text-decoration: none;
+ }
+ .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 10px 10px;
+ }
+ .header h1 {
+    padding: 10px;
+ }
+.header-navbar{
+    display: inline-block;    
+}
+.header-navbar__ul li{
+    display: inline-block;
+    
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <title>Simulador | Plazos Fijos/UVA</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header-navbar">
+            <div class="container">
+                <h1>Banco Interdigital</h1>
+                <div class="header-navbar__ul">
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./presupuestos.html">Presupuestos</a></li>
+                    <li><a href="./simulador.html">Simuladores</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                    <li><a href="./login.html">Inicio Sesion</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <h2>Formulario de plazo fijo</h2>
+      <form id="form">
+        <table style="text-align: left; margin-left: auto; margin-right: auto;">
+            <tbody class="body-form">
+                <tr>
+                    <td>
+                        <label for="capital-depositado">Ingresa el valor de capital a depositar en pesos:</label>
+                    </td>
+                    <td>
+                        <input id="capital-depositado" required="required" step="0.1" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="duracion-deposito">Ingresa cantidad de meses del deposito:</label>
+                    </td>
+                    <td>
+                        <input id="duracion-deposito" required="required" step="0.1" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tasa-de-interes">Ingresa la tasa de intereses anual (TNA):</label>
+                    </td>
+                    <td>
+                        <input id="tasa-de-interes" required="required" step="0.1" type="number" />
+                    </td>
+                </tr>
+                <tr align="center" class="buttons">
+                    <td colspan="2" rowspan="1">
+                        <input value="Procesar" type="button" onclick="algoritmo()"/>
+                        <input type="reset" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script src="../index.js">
+    </script>
+</body>
+</html>
