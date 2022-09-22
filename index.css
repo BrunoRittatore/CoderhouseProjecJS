@@ -1,4 +1,12 @@
 
+ body {
+    background-color:#56e4eb;
+    box-shadow: 0px 4px 30px lightcoral;
+    background-repeat: no-repeat;
+    display: grid;
+    
+ }
+
 
 .body-form {
     padding: 10px;
@@ -16,21 +24,19 @@
  a{
     text-decoration: none;
  }
- .header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding: 10px 10px;
+ header {
+    border-radius: 20px;
+    justify-content:space-around;
+    padding: 5px;
  }
- .header h1 {
+ header h1 {
     padding: 10px;
+    margin-right: 5rem;
  }
-.header-navbar{
-    display: inline-block;    
-}
-.header-navbar__ul li{
-    display: inline-block;
-    
-}
+
+ .navbar-nav {
+    margin-left: 5rem;
+ }
+ .navbar-nav li {
+    justify-content:space-around;
+ }
