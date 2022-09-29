@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../index.css">
     <title>Login | Session</title>
 </head>
+
 <body class="min-vh-100">
     <header>
         <nav class="navbar navbar-expand-lg  rounded-pill">
@@ -20,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav bg-light rounded-pill px-3 py-1">
                         <li class="nav-item">
-                            <a class="nav-link active"  href="../index.html">Home</a>
+                            <a class="nav-link active" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./presupuestos.html">Presupuestos</a>
@@ -41,8 +43,23 @@
     </header>
     <main>
         <h2>LOGIN</h2>
+        <div>
+            <ul id="listUser">
+                <h3> All users here: </h3>
+            </ul>
+        </div>
+        <form onsubmit="return false">
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+                <button type="submit" onclick="Login()">Login</button>
+            </div>
+        </form>
     </main>
     <script src="../index.js">
     </script>
 </body>
+
 </html>

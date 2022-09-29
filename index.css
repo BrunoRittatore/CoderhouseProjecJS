@@ -25,6 +25,7 @@
     text-decoration: none;
  }
  header {
+    max-height: 200px;
     border-radius: 20px;
     justify-content:space-around;
     padding: 5px;
