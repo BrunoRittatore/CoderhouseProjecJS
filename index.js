@@ -1,3 +1,4 @@
+
 class plazoFijo {
     constructor(capitalDepositado, meses, TNA, capitalAcumulado) {
         this.capitalDepositado = capitalDepositado;
@@ -17,7 +18,7 @@ let resultado = document.getElementById('resultado');
 console.log('Testing Dev Tools');
 function algoritmo() {
 
-   let  variables = [TNA = null, TM = null,  capitalAcumulado = null, meses = null, capitalDepositado = null];
+    let variables = [TNA = null, TM = null, capitalAcumulado = null, meses = null, capitalDepositado = null];
     variables.capitalDepositado = parseInt(document.querySelector('#capital-depositado').value);
     variables.meses = parseInt(document.querySelector('#duracion-deposito').value);
     variables.TNA = parseInt(document.querySelector('#tasa-de-interes').value);
@@ -29,43 +30,73 @@ function algoritmo() {
 
 let procesar = document.getElementById('procesar');
 procesar.addEventListener('click', () => {
-    algoritmo();
 
+    toastVerification(algoritmo);
+   
 })
 
 function Login() {
-   let a = [];
-   
+    let a = [];
+    const up1 = {
+        name: 'abcd@gmail.com',
+        password: btoa('abc@12')
+    };
+    const up2 = {
+        name: 'bcd@gmail.com',
+        password: btoa('bcd@12')
+    };
+    a.push(up1);
+    a.push(up2);
 
-const up1 = {
-    name:'abcd@gmail.com',
-    password: btoa('abc@12')
-};
-const up2 = {
-    name:'bcd@gmail.com',
-    password: btoa('bcd@12')
-};
-a.push(up1);
-a.push(up2);
+    console.log(a);
 
-console.log(a);
+    const username = document.getElementById('uname').value;
+    const password = document.getElementById('psw').value;
+    a.push({ name: username, password: password });
 
-const username = document.getElementById('uname').value;
-const password = document.getElementById('psw').value;
+    sessionStorage.setItem("currentloggedin", username);
+    localStorage.setItem('all_users', JSON.stringify(a));
 
-sessionStorage.setItem("currentloggedin",username);
+    a = JSON.parse((localStorage.getItem("all_users")));
 
-localStorage.setItem('all_users',JSON.stringify(a));
+    const hash = Object.fromEntries(a.map(e => [e.name, e.password]));
 
-a = JSON.parse((localStorage.getItem("all_users")));
-
-a.push({name:username, password:password});
-
-localStorage.setItem('name',JSON.stringify(a));
-
-for ( var i = 0 ; i < a.length ; i++ ) {
-    var li = document.createElement("li");
-    li.innerHTML = a[i]['name'];
-    document.getElementById("listUser").appendChild(li);
+    for (let key of hash) {
+        if (key[0] === username && key[1] === atob(password)) {
+            alert('Login successful');
+        }
+        else {
+            alert('Login fail');
+        }
+    }
+    for (var i = 0; i < a.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = a[i]['name'];
+        document.getElementById("listUser").appendChild(li);
+    }
 }
+
+
+const toastVerification = (method) =>{
+    (async () => {
+
+        const { value: accept } = await Swal.fire({
+            title: 'Terms and conditions',
+            input: 'checkbox',
+            inputValue: 1,
+            inputPlaceholder:
+                'I agree with the terms and conditions',
+            confirmButtonText:
+                'Continue <i class="fa fa-arrow-right"></i>',
+            inputValidator: (result) => {
+                return !result && 'You need to agree with T&C'
+            }
+        })
+
+        if (accept) {
+            method();
+        }
+
+    })
+    ()
 }
