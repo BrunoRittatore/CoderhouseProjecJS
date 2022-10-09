@@ -13,30 +13,29 @@
 </head>
 
 <body class="min-vh-100">
-    <header>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="./assets/backgroundVideo.mp4" type="video/mp4">
+    </video>
+    <header class="">
         <nav class="navbar navbar-expand-lg  rounded-pill">
-            <div class="container-fluid">
-                <h1>Banco Interdigital</h1>
+            <div class="container-fluid mx-auto">
+                <h1 class="ms-5">Banco Interdigital</h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav bg-light rounded-pill px-3 py-1">
+                <div class=" navbar-collapse collapse navbar-brand   ms-5 justify-content-around" id="navbarNav">
+                    <ul class="navbar-nav  px-3 py-1 ms-5 ">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link  mx-2" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./views/presupuestos.html">Presupuestos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./views/simulador.html">Simuladores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./views/contacto.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./views/login.html">Inicio Sesion</a>
+                            <a class="nav-link  mx-2" href="./views/simulador.html">Simuladores</a>
+                        </li>     
+                    </ul>
+                    <ul class="navbar-nav  px-3 py-1 ms-5 ">
+                        <li class="nav-item ">
+                            <a class="nav-link  mx-2" href="./views/login.html">Inicio Sesion</a>
                         </li>
                     </ul>
                 </div>
