@@ -1,3 +1,4 @@
+console.log("inicio");
 
 class plazoFijo {
     constructor(capitalDepositado, meses, TNA, capitalAcumulado) {
@@ -28,12 +29,15 @@ function algoritmo() {
     plazoFijo1.resultado();
 }
 
-let procesar = document.getElementById('procesar');
-procesar.addEventListener('click', () => {
+const procesar = document.getElementById('procesar');
+if(!(Object.is(procesar,null))){
+    procesar.addEventListener('click', () => {
 
-    toastVerification(algoritmo);
-   
-})
+        toastVerification(algoritmo);
+       
+    });
+}
+
 
 function Login() {
     let a = [];
@@ -99,4 +103,22 @@ const toastVerification = (method) =>{
 
     })
     ()
+}
+
+function apiBinance() {
+    let endpoint = 'https://api.binance.com/api/v3/ticker/price'
+fetch(endpoint)
+    .then( response => response.json() )
+    .then( data => mostrarData(data))
+    .catch( error => console.log(error))
+
+    console.log(data)
+
+const mostrarData = (data)=>{
+    let body = '';
+    for (let i=0; i < data.length; i++) {
+        body += `<tr><td>${data[i].symbol}</td><td>${data[i].price}</td></tr>`
+    }
+    document.getElementById('data').innerHTML = body
+}    
 }
