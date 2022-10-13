@@ -108,11 +108,10 @@ const toastVerification = (method) =>{
 function apiBinance() {
     let endpoint = 'https://api.binance.com/api/v3/ticker/price'
 fetch(endpoint)
-    .then( response => response.json() )
+    .then( response =>  response.json() ) 
     .then( data => mostrarData(data))
     .catch( error => console.log(error))
 
-    console.log(data)
 
 const mostrarData = (data)=>{
     let body = '';

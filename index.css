@@ -92,6 +92,7 @@
 }
 .tabla-css th,
 .tabla-css td {
+   color: black;
    padding: 20px 20px;
    text-align: center;
 }
