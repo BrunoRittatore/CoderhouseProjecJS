@@ -115,9 +115,14 @@ fetch(endpoint)
 
 const mostrarData = (data)=>{
     let body = '';
-    for (let i=0; i < data.length; i++) {
+    for (let i=0; i < 10; i++) {
         body += `<tr><td>${data[i].symbol}</td><td>${data[i].price}</td></tr>`
     }
     document.getElementById('data').innerHTML = body
 }    
 }
+
+let remove = document.getElementById('cleanApi');
+remove.addEventListener('click',() => {
+    document.getElementById('data').innerHTML = "";
+})

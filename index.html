@@ -42,22 +42,24 @@
             </div>
         </nav>
     </header>
-    <main class="content bg-light">
-        <h2>Inicio</h2>
-        
-        
+    <main class="content">
+        <h2 class="text-light">Inicio</h2>
     <table class="tabla-css">
-        <thead onclick="apiBinance()">
+        
+        <thead >
+            <button type="button" class="btn btn-light" onclick="apiBinance()">Procesar Api</button>
             <tr>
                 <th>Símbolo</th>
                 <th>Precio</th>
             </tr>
+            <button type="button" id="cleanApi"class="btn btn-light" >Limpiar</button>
         </thead>
+      
         <tbody id="data"> </tbody>
     </table>
       
 
-        
+    
     </main>
     <footer class="footer">
         <nav class="navbar navbar-expand-lg  rounded-pill">

@@ -69,7 +69,6 @@
 }
 .content {
    position:relative;
-   color: #f1f1f1;
    width: 100%;
    padding: 20px;
  }
@@ -92,7 +91,7 @@
 }
 .tabla-css th,
 .tabla-css td {
-   color: black;
+   color: white;
    padding: 20px 20px;
    text-align: center;
 }
