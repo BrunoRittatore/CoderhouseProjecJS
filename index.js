@@ -1,5 +1,6 @@
 console.log("inicio");
 
+/* Funcion de simulador de plazo fijo */
 class plazoFijo {
     constructor(capitalDepositado, meses, TNA, capitalAcumulado) {
         this.capitalDepositado = capitalDepositado;
@@ -39,7 +40,12 @@ if(!(Object.is(procesar,null))){
 }
 
 
+
+
+/* Function del Login */ 
+
 function Login() {
+    document.getElementById("userLogin").innerHTML = "";
     let a = [];
     const up1 = {
         name: 'abcd@gmail.com',
@@ -49,37 +55,39 @@ function Login() {
         name: 'bcd@gmail.com',
         password: btoa('bcd@12')
     };
+    const up3 = {
+        name: 'brunogro96@hotmail.com',
+        password: 'hola123'
+    }
     a.push(up1);
     a.push(up2);
-
-    console.log(a);
+    a.push(up3);
 
     const username = document.getElementById('uname').value;
     const password = document.getElementById('psw').value;
-    a.push({ name: username, password: password });
 
     sessionStorage.setItem("currentloggedin", username);
     localStorage.setItem('all_users', JSON.stringify(a));
 
     a = JSON.parse((localStorage.getItem("all_users")));
 
-    const hash = Object.fromEntries(a.map(e => [e.name, e.password]));
+     const findUsername = a.find((element) => element.name == username );
+     const findPassword = a.find((element) => element.password == password );
 
-    for (let key of hash) {
-        if (key[0] === username && key[1] === atob(password)) {
-            alert('Login successful');
-        }
-        else {
-            alert('Login fail');
-        }
-    }
-    for (var i = 0; i < a.length; i++) {
+     const display = ()  =>  (findUsername != undefined && findPassword != undefined) ? alert("Login Successful") : alert("Fail in login");
+     display();
+     document.getElementById("userLogin").innerHTML = '<h3> All users here: </h3>';
+     for (var i = 0; i < a.length; i++) {
         var li = document.createElement("li");
         li.innerHTML = a[i]['name'];
+        document.getElementById("userLogin").innerHTML = '<ul id="listUser"> </ul>';
         document.getElementById("listUser").appendChild(li);
     }
+   
+
 }
 
+/* Verificador de simulador */
 
 const toastVerification = (method) =>{
     (async () => {
@@ -104,7 +112,7 @@ const toastVerification = (method) =>{
     })
     ()
 }
-
+/* Api de Home */
 function apiBinance() {
     let endpoint = 'https://api.binance.com/api/v3/ticker/price'
 fetch(endpoint)
@@ -113,7 +121,7 @@ fetch(endpoint)
     .catch( error => console.log(error))
 
 
-const mostrarData = (data)=>{
+    const mostrarData = (data)=>{
     let body = '';
     for (let i=0; i < 10; i++) {
         body += `<tr><td>${data[i].symbol}</td><td>${data[i].price}</td></tr>`
